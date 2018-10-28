@@ -7,10 +7,14 @@
     <title>鹿と実存</title>
 
     <style>
-      @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:700');
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
 
       :root {
-        font-family: 'M PLUS Rounded 1c', -apple-system, 'BlinkMacSystemFont', '.SFNSDisplay-Regular', 'Segoe UI', sans-serif;
+        font-family: -apple-system, 'BlinkMacSystemFont', '.SFNSDisplay-Regular', 'Segoe UI', sans-serif;
       }
 
       html,
@@ -18,48 +22,125 @@
         height: 100%;
       }
 
-      html {
-        background-image: url('https://user-images.githubusercontent.com/1396953/45495020-5e0dfb80-b7ad-11e8-9fad-897748dc10f9.jpg');
-        background-size: cover;
+      body {
+        margin: 0;
+        color: black;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+      }
+
+      a:hover {
+        opacity: 0.5;
+      }
+
+      main {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .svg {
+        display: block;
+        text-indent: 101%;
+        overflow: hidden;
+        white-space: nowrap;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
       }
 
-      body {
-        padding: 1.5em;
+      .header {
+        width: 100%;
+      }
+
+      .header__avatar {
+        text-align: center;
+      }
+
+      .header__avatar > a {
+        display: inline-block;
+      }
+
+      .header__avatar > a > img {
+        display: block;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+
+      .header__title {
+        margin-top: 40px;
+        height: 50px;
+        background-image: url(./images/shikatojitsuzon.svg);
+      }
+
+      .bunfree {
+        margin-top: 40px;
+        width: 100%;
+      }
+
+      .bunfree__title {
         margin: 0;
-        color: blue;
-        background-color: rgba(255, 255, 255, 0.66);
+        height: 24px;
+        text-align: center;
       }
 
-      a {
-        color: blue;
+      .bunfree__title > a {
+        height: 24px;
+        background-image: url(./images/bunfree.svg);
       }
 
-      h1 {
-        margin-top: 0;
+      .bunfree__booth {
+        margin-top: 30px;
+        height: 24px;
+        background-image: url(./images/booth.svg);
+      }
+
+      .bunfree__place {
+        margin-top: 15px;
+        height: 18px;
+        background-image: url(./images/place.svg);
       }
     </style>
   </head>
   <body>
-    <header>
-      <h1>
-        鹿と実存
-      </h1>
-    </header>
-
     <main>
-      <p>
-        「鹿と実存」は、会社員の<a href="https://people.suzuri.jp/@shikakun" target="_blank">鹿</a>（ハンドルネーム）と、住まいのトラブルを抱えている<a href="https://people.suzuri.jp/@jitsuzon" target="_blank">実存</a>（ハンドルネーム）の、詩と短歌のユニットです。
-      </p>
+      <header class="header">
+        <figure class="header__avatar">
+          <a href="https://twitter.com/shikatojitsuzon" target="_blank"><img src="./images/avatar.jpg" alt=""></a>
+        </figure>
 
-      <nav>
-        <ul>
-          <li>
-            <a href="https://github.com/shikakun/jitsuzon/issues">BBS</a>
-          </li>
-        </ul>
-      </nav>
+        <h1 class="header__title svg">
+          鹿と実存
+        </h1>
+      </header>
+
+      <section class="bunfree">
+        <h2 class="bunfree__title">
+          <a href="https://bunfree.net/event/tokyo27/" target="_blank" class="svg">
+            第二十七回文学フリマ東京
+          </a>
+        </h2>
+
+        <div class="bunfree__booth svg">
+          G-32
+        </div>
+
+        <div class="bunfree__place svg">
+          （Eホール・1F）
+        </div>
+      </section>
     </main>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-20528252-20"></script>
